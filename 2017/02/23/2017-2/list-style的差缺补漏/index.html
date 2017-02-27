@@ -10,29 +10,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="今天做页面的时候遇到list-style设置失效的问题，具体的需求是这样的：固定容器的高，内部有左右两侧，左侧为一张缩略图；右侧分为上下两部分，上部分为标题，下部分为一列表；如下图
 
-;
+悬浮前：
+悬浮后：
 
-要求实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如下图">
+要求：实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如下图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有关list-style的一点查缺补漏">
 <meta property="og:url" content="http://yoursite.com/2017/02/23/2017-2/list-style的差缺补漏/index.html">
 <meta property="og:site_name" content="404的博客">
 <meta property="og:description" content="今天做页面的时候遇到list-style设置失效的问题，具体的需求是这样的：固定容器的高，内部有左右两侧，左侧为一张缩略图；右侧分为上下两部分，上部分为标题，下部分为一列表；如下图
 
-;
+悬浮前：
+悬浮后：
 
-要求实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如下图">
-<meta property="og:image" content="http://yoursite.com/../../img/2017-2/2017-2-23-01.png">
-<meta property="og:image" content="http://yoursite.com/../../img/2017-2/2017-2-23-02.png">
-<meta property="og:updated_time" content="2017-02-23T15:17:39.548Z">
+要求：实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如下图">
+<meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-23-01.png">
+<meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-23-02.png">
+<meta property="og:updated_time" content="2017-02-27T14:55:09.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有关list-style的一点查缺补漏">
 <meta name="twitter:description" content="今天做页面的时候遇到list-style设置失效的问题，具体的需求是这样的：固定容器的高，内部有左右两侧，左侧为一张缩略图；右侧分为上下两部分，上部分为标题，下部分为一列表；如下图
 
-;
+悬浮前：
+悬浮后：
 
-要求实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如下图">
-<meta name="twitter:image" content="http://yoursite.com/../../img/2017-2/2017-2-23-01.png">
+要求：实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如下图">
+<meta name="twitter:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-23-01.png">
   
     <link rel="alternative" href="/atom.xml" title="404的博客" type="application/atom+xml">
   
@@ -192,26 +195,26 @@
       
         <p>今天做页面的时候遇到list-style设置失效的问题，具体的需求是这样的：固定容器的高，内部有左右两侧，左侧为一张缩略图；右侧分为上下两部分，上部分为标题，下部分为一列表；如下图</p>
 <hr>
-<p><img src="../../img/2017-2/2017-2-23-01.png" alt="image">;</p>
+<p>悬浮前：<br><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-23-01.png" alt="悬浮前图片"></p>
+<p>悬浮后：<br><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-23-02.png" alt="悬浮后图片"></p>
 <hr>
-<p>要求实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如下图</p>
+<p><strong>要求：实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如下图</strong></p>
 <a id="more"></a>
-<hr>
-<p><img src="../../img/2017-2/2017-2-23-02.png" alt="image">;</p>
-<hr>
 <p>结构搭建和样式都很简单，但却遇到了一个问题是；默认我的写法是</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ul &gt; li&#123;</div><div class="line">    list-style: none;</div><div class="line">    display: none;</div><div class="line">    color: #cc8167;</div><div class="line">&#125;</div><div class="line">ul &gt; li:first-child&#123;</div><div class="line">    display: block;</div><div class="line">&#125;</div><div class="line">div.a:hover li&#123;</div><div class="line">    display: block;</div><div class="line">    list-style: square inside;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这种写法始终无效，鼠标放上去其他属性很正常，就是列表标记不出来；查了网上资源，多是说float影响或者距离不够，但我并未float且已设置为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list-style-position: inside</div></pre></td></tr></table></figure>
 <p>不应该出现的呀，后来去w3cschoo再次细看了这个属性，发现了这一句</p>
 <blockquote>
-<p>该属性是一个简写属性，涵盖了所有其他列表样式属性。由于它应用到所有 ==display 为 list-item== 的元素，所以在普通的 HTML 和 XHTML 中只能用于 li 元素，不过实际上它可以应用到任何元素，并由 list-item 元素继承。</p>
+<p>该属性是一个简写属性，涵盖了所有其他列表样式属性。由于它应用到所有 <strong>display 为 list-item</strong> 的元素，所以在普通的 HTML 和 XHTML 中只能用于 li 元素，不过实际上它可以应用到任何元素，并由 list-item 元素继承。</p>
 </blockquote>
 <p>你可以点击<a href="http://www.w3school.com.cn/cssref/pr_list-style.asp" target="_blank" rel="external">这里</a>去看详细说明；</p>
 <p>然后修改代码为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ul &gt; li&#123;</div><div class="line">    list-style: none;</div><div class="line">    display: none;</div><div class="line">    color: #cc8167;</div><div class="line">&#125;</div><div class="line">ul &gt; li:first-child&#123;</div><div class="line">    display: list-item;</div><div class="line">&#125;</div><div class="line">div.a:hover li&#123;</div><div class="line">    display: list-item;</div><div class="line">    list-style: square inside;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这样就可以了；也算是差缺补漏了一个知识点，另外这个属性值可以设3个，其中第三个可以设为自定义图片还是很方便的</p>
-<p>这个问题解决了，新的问题来了，不同浏览器之间，这个列表标记与文字之间的间距并不一致，甚至可以说是过大了，这又成了个问题；这我暂时没有找到可行的方法，有知道的麻烦指教一下，<br>最终我还是采用了before伪元素的形式去实现的，毕竟这种方式间距控制还是很简单的。</p>
+<p>这个问题解决了，新的问题来了，不同浏览器之间，这个列表标记与文字之间的间距并不一致，甚至可以说是过大了，这又成了个问题；这我暂时没有找到可行的方法，有知道的麻烦指教一下，</p>
+<p>最终我还是采用了before伪元素的形式去实现的，毕竟这种方式间距控制还是很简单的。</p>
+<p>欢迎指正，转载请注明出处！</p>
 
       
 
