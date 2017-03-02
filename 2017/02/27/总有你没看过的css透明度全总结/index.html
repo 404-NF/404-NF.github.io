@@ -40,7 +40,7 @@ IE8-的透明度常规兼容方法；
 <meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-28-02.png">
 <meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-28-03.png">
 <meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-28-04.png">
-<meta property="og:updated_time" content="2017-03-02T14:30:31.242Z">
+<meta property="og:updated_time" content="2017-03-02T14:38:11.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="总有你没看过的css透明度全总结">
 <meta name="twitter:description" content="日常吐槽
@@ -216,7 +216,7 @@ IE8-的透明度常规兼容方法；
         <blockquote>
 <p>日常吐槽</p>
 </blockquote>
-<p>最近写页面要兼容IE8，这让我用了一年多vue的人转回来玩Jquery，不停的addClass,removeClass,attr….要多糟心有多糟心了~这不，IE8透明度这兼容问题又来了么;废话不多说，马上总结开始。<br><br></p>
+<p>最近写页面要兼容IE8，这让我用了一年多vue的人转回来玩Jquery，不停的addClass,removeClass,attr….要多糟心有多糟心了~这不，IE8透明度这兼容问题又来了么;废话不多说，马上总结开始。</p>
 <blockquote>
 <p>内容概要</p>
 </blockquote>
@@ -225,19 +225,14 @@ IE8-的透明度常规兼容方法；
 <li>opacity的适用情况;</li>
 <li>IE9+透明度的最佳替代方案；</li>
 <li>IE8-的透明度常规兼容方法；</li>
-<li><p>利用套路反杀IE8-兼容；</p>
-<a id="more"></a>
-<p><br></p>
-</li>
-</ol>
+<li>利用套路反杀IE8-兼容；<a id="more"></a>
 <blockquote>
 <p>内容开始</p>
 </blockquote>
-<p><strong>1, 需求描述</strong></p>
-<p>如下图要求实现底色为蓝色且具有一定透明度透出地图的效果</p>
-<p><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-28-01.png" alt="透明度样例图"></p>
-<p><strong>2, 常规方法及兼容方法</strong></p>
-<p>很多第一次做透明度的人脑袋一拍就想到了CSS3的opacity，即</p>
+</li>
+</ol>
+<p><strong>1, 需求描述</strong><br>如下图要求实现底色为蓝色且具有一定透明度透出地图的效果<br><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-28-01.png" alt="透明度样例图"></p>
+<p><strong>2, 常规方法及兼容方法</strong><br>很多第一次做透明度的人脑袋一拍就想到了CSS3的opacity，即</p>
 <p><strong>2.1, 方案一: opacity</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    color: #fff;</div><div class="line">    background-color: #00008b;</div><div class="line">    opacity: 0.5;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-28-02.png" alt="透明度样例图"></p>
 <p>总体外观来说不是差别很明显，但仔细一比较还是发现，里面的内容也被透明了，细看文字也没这么亮的感觉。</p>
@@ -271,16 +266,15 @@ IE8-的透明度常规兼容方法；
 缺点：对不上需求
 </code></pre><hr>
 <p>以上方法都不行后，很多人就要祭出大招了~~  </p>
-<p><strong>2.4, 方案四: 万能贴图法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    background: url(...) left top repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>2.4, 方案四: 万能贴图法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    background: url(...) left top repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这个方法就是事先按透明度切除一个10*10的透明图层，然后通过背景图重复的方法达到底色透明的目的；  </p>
 <pre><code>优点：万能
 缺点：透明度不确定，颜色不确定时，工作量很大，不够灵活
-</code></pre><p><strong>3，利用套路兼得需求和兼容</strong></p>
+</code></pre><p><strong>3，利用套路兼得需求和兼容</strong>    </p>
 <pre><code>3.1,套路一：你走你的道，我过我的桥
-</code></pre><p> 我们在2.1方案和2.3的缺点上都提到了一点，即子节点会被继承透明度的问题；那么我们换个想法，我们把透明度设在一个<br> 空节点上不就不影响其他节点上了么，然后在利用定位，把他铺满到全屏最底层就解决了；如下：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    position: relative;</div><div class="line">&#125; </div><div class="line"></div><div class="line">div:before&#123;</div><div class="line">   content: &quot;&quot;;</div><div class="line">   width: 100%;</div><div class="line">   height: 100%;</div><div class="line">   position: absolute;</div><div class="line">   left: 0;</div><div class="line">   top: 0;</div><div class="line">    z-index: 0;</div><div class="line">   background-color: #00008b;</div><div class="line">   opacity: 0.5;</div><div class="line">   -ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=50)&quot;;</div><div class="line">   filter:alpha(opacity=50);</div><div class="line">   filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);</div><div class="line">  </div><div class="line">&#125;</div><div class="line"></div><div class="line">div &gt; ...&#123;</div><div class="line">   position: ...,</div><div class="line">   z-index: 10</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</code></pre><p> 我们在2.1方案和2.3的缺点上都提到了一点，即子节点会被继承透明度的问题；那么我们换个想法，我们把透明度设在一个<br> 空节点上不就不影响其他节点上了么，然后在利用定位，把他铺满到全屏最底层就解决了；如下：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    position: relative;</div><div class="line">&#125; </div><div class="line">div:before&#123;</div><div class="line">   content: &quot;&quot;;</div><div class="line">   width: 100%;</div><div class="line">   height: 100%;</div><div class="line">   position: absolute;</div><div class="line">   left: 0;</div><div class="line">   top: 0;</div><div class="line">    z-index: 0;</div><div class="line">   background-color: #00008b;</div><div class="line">   opacity: 0.5;</div><div class="line">   -ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=50)&quot;;</div><div class="line">   filter:alpha(opacity=50);</div><div class="line">   filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);</div><div class="line">&#125;</div><div class="line">div &gt; ...&#123;</div><div class="line">   position: ...,</div><div class="line">   z-index: 10</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p> 这样就完美隔离了透明度影响节点的问题，唯一麻烦的是需要把当前节点下的其余节点嵌套到一个容器里去，然后设<br> 置合适的z-index值；</p>
-<p> 当然以上方法中有个问题即是IE8中不支持伪元素颜色的透明，所以需要做到IE8兼容的情况，就需要自己手动的在节<br> 点下做一个底色透明容器,即:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">div &gt; .before&#123;</div><div class="line">    content: &quot;&quot;;</div><div class="line">    width: 100%;</div><div class="line">    height: 100%;</div><div class="line">    position: absolute;</div><div class="line">    left: 0;</div><div class="line">    top: 0;</div><div class="line">     z-index: 0;</div><div class="line">    background-color: #00008b;</div><div class="line">    opacity: 0.5;</div><div class="line">    -ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=50)&quot;;</div><div class="line">    filter:alpha(opacity=50);</div><div class="line">    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);</div><div class="line">   </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p> 当然以上方法中有个问题即是IE8中不支持伪元素颜色的透明，所以需要做到IE8兼容的情况，就需要自己手动的在节<br> 点下做一个底色透明容器,即:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">div &gt; .before&#123;</div><div class="line">    content: &quot;&quot;;</div><div class="line">    width: 100%;</div><div class="line">    height: 100%;</div><div class="line">    position: absolute;</div><div class="line">    left: 0;</div><div class="line">    top: 0;</div><div class="line">     z-index: 0;</div><div class="line">    background-color: #00008b;</div><div class="line">    opacity: 0.5;</div><div class="line">    -ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=50)&quot;;</div><div class="line">    filter:alpha(opacity=50);</div><div class="line">    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
 <pre><code>3.2,套路二：狭路相逢不要脸的胜，不行就强上
 </code></pre><p>我们讨论了这么多透明度的方法，在不考虑兼容的情况下，效果最完美的就是 方案二：RGBA了，然后遇到IE8，能否有兼容办法呢，<br>答案是有的，这里我们要用到一下IE滤镜中的渐变滤镜了，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=XXX,endColorstr=XXX)</div></pre></td></tr></table></figure></p>
 <p>我们需要传进去的参数就两个，渐变起始色和渐变结束色，我们只需要透明即可，不需要渐变；因此起始色和渐变色是一致的，而<br>这个渐变滤镜的颜色传值共9位，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#AABBBBBB</div></pre></td></tr></table></figure></p>
@@ -337,8 +331,7 @@ IE8-的透明度常规兼容方法；
 </tr>
 </tbody>
 </table>
-<p>3.是被透明颜色的16进制，即我们常写的FFFFFF,000000等等</p>
-<p>举例来说：即是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    color: #fff;</div><div class="line">    background-color: rgba(0, 0, 139,0.5);</div><div class="line">    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F00008B,endColorstr=#7F00008B)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3.是被透明颜色的16进制，即我们常写的FFFFFF,000000等等<br>举例来说：即是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    color: #fff;</div><div class="line">    background-color: rgba(0, 0, 139,0.5);</div><div class="line">    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F00008B,endColorstr=#7F00008B)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>总结</p>
 </blockquote>
@@ -398,6 +391,10 @@ IE8-的透明度常规兼容方法；
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
@@ -480,15 +477,6 @@ IE8-的透明度常规兼容方法；
 
   
 <nav id="article-nav">
-  
-    <a href="/2017/02/28/12/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
     <a href="/2017/02/23/list-style的差缺补漏/" id="article-nav-older" class="article-nav-link-wrap">
@@ -589,6 +577,18 @@ IE8-的透明度常规兼容方法；
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">不要脸</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
@@ -602,18 +602,6 @@ IE8-的透明度常规兼容方法；
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">原创</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">不要脸</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>
