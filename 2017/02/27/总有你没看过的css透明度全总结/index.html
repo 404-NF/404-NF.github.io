@@ -6,14 +6,56 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>404的博客</title>
+  <title>总有你没看过的css透明度全总结 | 404的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="404的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="日常吐槽
+
+最近写页面要兼容IE8，这让我用了一年多vue的人转回来玩Jquery，不停的addClass,removeClass,attr….要多糟心有多糟心了~这不，IE8透明度这兼容问题又来了么;废话不多说，马上总结开始。
+
+内容概要
+
+在以下总结内容，你将看到
+
+opacity的适用情况;
+IE9+透明度的最佳替代方案；
+IE8-的透明度常规兼容方法；
+利用套路反杀IE8-兼容；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总有你没看过的css透明度全总结">
+<meta property="og:url" content="http://yoursite.com/2017/02/27/总有你没看过的css透明度全总结/index.html">
 <meta property="og:site_name" content="404的博客">
+<meta property="og:description" content="日常吐槽
+
+最近写页面要兼容IE8，这让我用了一年多vue的人转回来玩Jquery，不停的addClass,removeClass,attr….要多糟心有多糟心了~这不，IE8透明度这兼容问题又来了么;废话不多说，马上总结开始。
+
+内容概要
+
+在以下总结内容，你将看到
+
+opacity的适用情况;
+IE9+透明度的最佳替代方案；
+IE8-的透明度常规兼容方法；
+利用套路反杀IE8-兼容；">
+<meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-28-01.png">
+<meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-28-02.png">
+<meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-28-03.png">
+<meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-28-04.png">
+<meta property="og:updated_time" content="2017-03-02T14:30:31.242Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="404的博客">
+<meta name="twitter:title" content="总有你没看过的css透明度全总结">
+<meta name="twitter:description" content="日常吐槽
+
+最近写页面要兼容IE8，这让我用了一年多vue的人转回来玩Jquery，不停的addClass,removeClass,attr….要多糟心有多糟心了~这不，IE8透明度这兼容问题又来了么;废话不多说，马上总结开始。
+
+内容概要
+
+在以下总结内容，你将看到
+
+opacity的适用情况;
+IE9+透明度的最佳替代方案；
+IE8-的透明度常规兼容方法；
+利用套路反杀IE8-兼容；">
+<meta name="twitter:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-28-01.png">
   
     <link rel="alternative" href="/atom.xml" title="404的博客" type="application/atom+xml">
   
@@ -151,116 +193,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-12" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .a{
-            width: 250px;
-            height: 200px;
-            border: 1px solid #aaa;
-            margin: 250px;
-            background: url("../img/vocaloid2.jpg") top center no-repeat;
-            border-radius: 4px;
-        }
-        .b{
-
-            /* margin: 250px; */
-            border-bottom: 1px dashed #aaa;
-            border-radius: 3%;
-            width: 250px;
-            height: 40px;
-            text-align: center;
-             /*background-color: rgba(0, 0, 139,0.5);*/
-            line-height: 40px;
-            color: #fff;
-
-            position: relative;
-            /*background-color: darkblue\9;*/
-            /*background-color: darkblue\9\0;*/
-            /*background-color: #8a6d3b\9\0;*/
-            /*background-color: transparent\9\0;*/
-            /*opacity: 0.5;*/
-            /*filter:alpha(opacity=50);*/
-            /*filter:alpha(opacity=50)\9\0;*/
-            /*This works in IE 8 & 9 too*/
-            /*background-color: rgba(0, 0, 139,0.5);*/
-            /*-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";*/
-            /*-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"\9\0;*/
-            /*IE4-IE9*/
-            /*filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50)\9;*/
-            /*filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50)\9\0;*/
-
-            /*background-color: rgba(0, 0, 139,0.5);*/
-        }
-        .before{
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 0;
-            background-color: #00008b;
-            opacity: 0.5;
-            /*-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";*/
-            filter:alpha(opacity=50);
-            /*filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);*/
-        }
-    </style>
-</head>
-<body>
-<div class="a">
-    <div class="b"><span class="before"></span>莲碧花园项目</div>
-</div>
-</body>
-</html>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/28/12/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-总有你没看过的css透明度全总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-总有你没看过的css透明度全总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/27/总有你没看过的css透明度全总结/">总有你没看过的css透明度全总结</a>
+    <h1 class="article-title" itemprop="name">
+      总有你没看过的css透明度全总结
     </h1>
   
 
@@ -276,7 +216,7 @@
         <blockquote>
 <p>日常吐槽</p>
 </blockquote>
-<p>最近写页面要兼容IE8，这让我用了一年多vue的人转回来玩Jquery，不停的addClass,removeClass,attr….要多糟心有多糟心了~这不，IE8透明度这兼容问题又来了么;废话不多说，马上总结开始。<br><br /></p>
+<p>最近写页面要兼容IE8，这让我用了一年多vue的人转回来玩Jquery，不停的addClass,removeClass,attr….要多糟心有多糟心了~这不，IE8透明度这兼容问题又来了么;废话不多说，马上总结开始。<br><br></p>
 <blockquote>
 <p>内容概要</p>
 </blockquote>
@@ -286,9 +226,167 @@
 <li>IE9+透明度的最佳替代方案；</li>
 <li>IE8-的透明度常规兼容方法；</li>
 <li><p>利用套路反杀IE8-兼容；</p>
-        
-          <a class="article-more-a" href="/2017/02/27/总有你没看过的css透明度全总结/#more">more >></a>
-        
+<a id="more"></a>
+<p><br></p>
+</li>
+</ol>
+<blockquote>
+<p>内容开始</p>
+</blockquote>
+<p><strong>1, 需求描述</strong></p>
+<p>如下图要求实现底色为蓝色且具有一定透明度透出地图的效果</p>
+<p><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-28-01.png" alt="透明度样例图"></p>
+<p><strong>2, 常规方法及兼容方法</strong></p>
+<p>很多第一次做透明度的人脑袋一拍就想到了CSS3的opacity，即</p>
+<p><strong>2.1, 方案一: opacity</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    color: #fff;</div><div class="line">    background-color: #00008b;</div><div class="line">    opacity: 0.5;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-28-02.png" alt="透明度样例图"></p>
+<p>总体外观来说不是差别很明显，但仔细一比较还是发现，里面的内容也被透明了，细看文字也没这么亮的感觉。</p>
+<pre><code>优点：最容易想到  
+
+缺点：子元素会继承透明度，不符需求
+</code></pre><hr>
+<p>方案一不行，就开始有人百度结果了，然后很快会查到CSS3的另一个透明度写法，即</p>
+<p><strong>2.2, 方案二: RGBA</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    color: #fff;</div><div class="line">    background-color: rgba(0, 0, 139,0.5);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-28-03.png" alt="透明度样例图"></p>
+<p>效果完美实现，但是在IE8及以下的浏览器中，全输挂了；如果我们只为了得出这一个解法，那也不能叫全总结了；<br>另外个人吐槽一下这个写法，每次都要转颜色格式很烦的有木有！</p>
+<pre><code>优点：完美实现  
+
+缺点：不兼容低版本浏览器，颜色值转换略烦
+</code></pre><hr>
+<p>一想到透明度IE8兼容,立马就有人想到了ie的filter滤镜，即</p>
+<p><strong>2.3, 方案三: filter: alpha(opacity=XX)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    filter:alpha(opacity=50);</div><div class="line">    -ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=50)&quot;;</div><div class="line">    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-28-04.png" alt="透明度样例图"></p>
+<p>此方案是这次讨论方案中最差劲的一个，原则上来说是完全实现不了，原因如下  </p>
+<ol>
+<li><p>该方案与我们讨论的opacity是类似的，子节点会继承透明度；</p>
+</li>
+<li><p>该方案中，我们会考虑IE8中正常底色，IE9中透明底色，然后再用滤镜去透明；事实上，IE中的background-color的<br> transparent属性存在兼容问题，它会被解析成background: none；最终导致css的hack失败，IE中全部无底色了；</p>
+</li>
+<li><p>该方案中利用滤镜去透明这一步，我们会想在IE8的时候用filter，IE9使用rgba即可，事实上，这个滤镜在ie8及ie9下<br> 皆能被解析，从而导致ie9双重透明</p>
+</li>
+</ol>
+<p>以上3条原因导致此方案完全不可实现当前需求，不过作为兼容方法的一种还是值得留意的</p>
+<pre><code>优点：终于兼容了
+
+缺点：对不上需求
+</code></pre><hr>
+<p>以上方法都不行后，很多人就要祭出大招了~~  </p>
+<p><strong>2.4, 方案四: 万能贴图法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    background: url(...) left top repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个方法就是事先按透明度切除一个10*10的透明图层，然后通过背景图重复的方法达到底色透明的目的；  </p>
+<pre><code>优点：万能
+缺点：透明度不确定，颜色不确定时，工作量很大，不够灵活
+</code></pre><p><strong>3，利用套路兼得需求和兼容</strong></p>
+<pre><code>3.1,套路一：你走你的道，我过我的桥
+</code></pre><p> 我们在2.1方案和2.3的缺点上都提到了一点，即子节点会被继承透明度的问题；那么我们换个想法，我们把透明度设在一个<br> 空节点上不就不影响其他节点上了么，然后在利用定位，把他铺满到全屏最底层就解决了；如下：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    position: relative;</div><div class="line">&#125; </div><div class="line"></div><div class="line">div:before&#123;</div><div class="line">   content: &quot;&quot;;</div><div class="line">   width: 100%;</div><div class="line">   height: 100%;</div><div class="line">   position: absolute;</div><div class="line">   left: 0;</div><div class="line">   top: 0;</div><div class="line">    z-index: 0;</div><div class="line">   background-color: #00008b;</div><div class="line">   opacity: 0.5;</div><div class="line">   -ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=50)&quot;;</div><div class="line">   filter:alpha(opacity=50);</div><div class="line">   filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);</div><div class="line">  </div><div class="line">&#125;</div><div class="line"></div><div class="line">div &gt; ...&#123;</div><div class="line">   position: ...,</div><div class="line">   z-index: 10</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p> 这样就完美隔离了透明度影响节点的问题，唯一麻烦的是需要把当前节点下的其余节点嵌套到一个容器里去，然后设<br> 置合适的z-index值；</p>
+<p> 当然以上方法中有个问题即是IE8中不支持伪元素颜色的透明，所以需要做到IE8兼容的情况，就需要自己手动的在节<br> 点下做一个底色透明容器,即:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">div &gt; .before&#123;</div><div class="line">    content: &quot;&quot;;</div><div class="line">    width: 100%;</div><div class="line">    height: 100%;</div><div class="line">    position: absolute;</div><div class="line">    left: 0;</div><div class="line">    top: 0;</div><div class="line">     z-index: 0;</div><div class="line">    background-color: #00008b;</div><div class="line">    opacity: 0.5;</div><div class="line">    -ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=50)&quot;;</div><div class="line">    filter:alpha(opacity=50);</div><div class="line">    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);</div><div class="line">   </div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<pre><code>3.2,套路二：狭路相逢不要脸的胜，不行就强上
+</code></pre><p>我们讨论了这么多透明度的方法，在不考虑兼容的情况下，效果最完美的就是 方案二：RGBA了，然后遇到IE8，能否有兼容办法呢，<br>答案是有的，这里我们要用到一下IE滤镜中的渐变滤镜了，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=XXX,endColorstr=XXX)</div></pre></td></tr></table></figure></p>
+<p>我们需要传进去的参数就两个，渐变起始色和渐变结束色，我们只需要透明即可，不需要渐变；因此起始色和渐变色是一致的，而<br>这个渐变滤镜的颜色传值共9位，即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#AABBBBBB</div></pre></td></tr></table></figure></p>
+<p>包含三个部分组成的，</p>
+<ol>
+<li>第一部分是固定的#符号，</li>
+<li>第二部分是颜色的透明度，该透明度的计算方法是<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[0-1]之间的透明值*255，然后转换为16进制</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在这里我列举一些常用的透明度对应值以供参考：</p>
+<table>
+<thead>
+<tr>
+<th>透明值</th>
+<th>转换后16进制值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 0.1</td>
+<td>19</td>
+</tr>
+<tr>
+<td> 0.2</td>
+<td>33</td>
+</tr>
+<tr>
+<td> 0.3</td>
+<td>4C</td>
+</tr>
+<tr>
+<td> 0.4</td>
+<td>66</td>
+</tr>
+<tr>
+<td> 0.5</td>
+<td>7F</td>
+</tr>
+<tr>
+<td> 0.6</td>
+<td>99</td>
+</tr>
+<tr>
+<td> 0.7</td>
+<td>B2</td>
+</tr>
+<tr>
+<td> 0.8</td>
+<td>C8</td>
+</tr>
+<tr>
+<td> 0.9</td>
+<td>E5</td>
+</tr>
+</tbody>
+</table>
+<p>3.是被透明颜色的16进制，即我们常写的FFFFFF,000000等等</p>
+<p>举例来说：即是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    /*其他属性设置此处不再概述*/</div><div class="line">    /*........*/</div><div class="line">    color: #fff;</div><div class="line">    background-color: rgba(0, 0, 139,0.5);</div><div class="line">    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F00008B,endColorstr=#7F00008B)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<p> 我们对透明度的用法做了一个总结如下表</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>  opacity</td>
+<td>简单</td>
+<td>不兼容IE，透明继承</td>
+</tr>
+<tr>
+<td>  rgba</td>
+<td>简单</td>
+<td>不兼容IE，透明不继承</td>
+</tr>
+<tr>
+<td>  alpha滤镜</td>
+<td>仅IE适用</td>
+<td>兼容性不好控制，透明继承</td>
+</tr>
+<tr>
+<td>  贴图</td>
+<td>万能</td>
+<td>麻烦，灵活性性差</td>
+</tr>
+<tr>
+<td>  透明空容器法</td>
+<td>兼容IE</td>
+<td>需要变更结构</td>
+</tr>
+<tr>
+<td>  gradient滤镜</td>
+<td>仅IE适用</td>
+<td>需要计算色值</td>
+</tr>
+</tbody>
+</table>
+<p>  通过以上总结，希望再次遇见透明度的相关需求的时候，能够选择合适的搭配，找到鱼和熊掌兼得的方法</p>
+<p>  本文属于原创，转载请注明出处：<a href="http://hmdeng110.github.io/" target="_blank" rel="external">http://hmdeng110.github.io/</a></p>
+
       
 
       
@@ -322,18 +420,83 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/27/总有你没看过的css透明度全总结/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/27/总有你没看过的css透明度全总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+    <a href="/2017/02/28/12/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/23/list-style的差缺补漏/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">有关list-style的一点查缺补漏</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -341,144 +504,10 @@
 
 
   
-    <article id="post-list-style的差缺补漏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/list-style的差缺补漏/">有关list-style的一点查缺补漏</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        
-        <a href="/2017/02/23/list-style的差缺补漏/" class="archive-article-date">
-  	<time datetime="2017-02-23T14:28:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天做页面的时候遇到list-style设置失效的问题，具体的需求是这样的：固定容器的高，内部有左右两侧，左侧为一张缩略图；右侧分为上下两部分，上部分为标题，下部分为一列表；如下图</p>
-<hr>
-<p>悬浮前：<br><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-23-01.png" alt="悬浮前图片"></p>
-<p>悬浮后：<br><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-23-02.png" alt="悬浮后图片"></p>
-<hr>
-<p><strong>要求：实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如上图</strong></p>
-        
-          <a class="article-more-a" href="/2017/02/23/list-style的差缺补漏/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/23/list-style的差缺补漏/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-开场" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/开场/">自我介绍</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/20/开场/" class="archive-article-date">
-  	<time datetime="2017-02-20T14:28:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>####大家好，这里是 404-NOTFOUND；</p>
-<p>先做个自我介绍，我是一名码农，细化一点叫 前端工程师，圈内常用名为404-NOTFOUND,<br>有时也叫404，当然名字冲突的时候我还会化身为403-NOTACCESS；工作3年了，属于自学前<br>端，目前在一家房地产软件开发公司担任前端架构师兼前端工程师；目前主要狩猎的代码方<br>面的技术主要有js,html,css,c#,vb;及其衍生类；主打还是前端三件套吧，其实后者只是抑制<br>不住自己内心的小波浪用来做些小软件自己使用而已，后续的话，我也会考虑把我做的一些软<br>件公布出来；有需要的也可以试试看。</p>
-<p>接下来我将把我私下里记录的小笔记，小套路慢慢放上来，希望能帮助到大家！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">不要脸</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/20/开场/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -501,8 +530,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
