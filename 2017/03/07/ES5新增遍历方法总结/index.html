@@ -6,14 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>404的博客</title>
+  <title>ES2016数组新增遍历方法的使用环境总结 | 404的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="404的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="日常吐槽
+
+　　其实当我坐在公交车上用手机敲下这个标题的时候，我还在迟疑要不要写这么一篇总结。
+一来ES5新增的这几个遍历方法网上早就是铺天盖地的基础介绍，随手检索一下就千篇一律的文章;
+二来可即便如此，我发现很多的团队成员却依然沉醉在ES3的for循环里久久不能自拔，再或者就是不管什么情况的循环，只要forEach就好了，只会forEach就好了！技术不懂得更新，那还和咸鱼有什么区别呢~
+所以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES2016数组新增遍历方法的使用环境总结">
+<meta property="og:url" content="http://yoursite.com/2017/03/07/ES5新增遍历方法总结/index.html">
 <meta property="og:site_name" content="404的博客">
+<meta property="og:description" content="日常吐槽
+
+　　其实当我坐在公交车上用手机敲下这个标题的时候，我还在迟疑要不要写这么一篇总结。
+一来ES5新增的这几个遍历方法网上早就是铺天盖地的基础介绍，随手检索一下就千篇一律的文章;
+二来可即便如此，我发现很多的团队成员却依然沉醉在ES3的for循环里久久不能自拔，再或者就是不管什么情况的循环，只要forEach就好了，只会forEach就好了！技术不懂得更新，那还和咸鱼有什么区别呢~
+所以">
+<meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-3-7-01.jpg">
+<meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-3-7-02.jpg">
+<meta property="og:updated_time" content="2017-03-07T14:17:24.974Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="404的博客">
+<meta name="twitter:title" content="ES2016数组新增遍历方法的使用环境总结">
+<meta name="twitter:description" content="日常吐槽
+
+　　其实当我坐在公交车上用手机敲下这个标题的时候，我还在迟疑要不要写这么一篇总结。
+一来ES5新增的这几个遍历方法网上早就是铺天盖地的基础介绍，随手检索一下就千篇一律的文章;
+二来可即便如此，我发现很多的团队成员却依然沉醉在ES3的for循环里久久不能自拔，再或者就是不管什么情况的循环，只要forEach就好了，只会forEach就好了！技术不懂得更新，那还和咸鱼有什么区别呢~
+所以">
+<meta name="twitter:image" content="http://olxsqaohz.bkt.clouddn.com/2017-3-7-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="404的博客" type="application/atom+xml">
   
@@ -145,16 +167,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-ES5新增遍历方法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-ES5新增遍历方法总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/07/ES5新增遍历方法总结/">ES2016数组新增遍历方法的使用环境总结</a>
+    <h1 class="article-title" itemprop="name">
+      ES2016数组新增遍历方法的使用环境总结
     </h1>
   
 
@@ -173,10 +193,169 @@
 <p>　　其实当我坐在公交车上用手机敲下这个标题的时候，我还在迟疑要不要写这么一篇总结。</p>
 <p>一来ES5新增的这几个遍历方法网上早就是铺天盖地的基础介绍，随手检索一下就千篇一律的文章;</p>
 <p>二来可即便如此，我发现很多的团队成员却依然沉醉在ES3的for循环里久久不能自拔，再或者就是不管什么情况的循环，只要forEach就好了，只会forEach就好了！<br>技术不懂得更新，那还和咸鱼有什么区别呢~</p>
-<p>所以这里我就根据我前段时间写的大量的业务代码来总结一下新增的这几个方法，欢迎指出问题及补充！<br>
-        
-          <a class="article-more-a" href="/2017/03/07/ES5新增遍历方法总结/#more">more >></a>
-        
+<p>所以这里我就根据我前段时间写的大量的业务代码来总结一下新增的这几个方法，欢迎指出问题及补充！<br> <a id="more"></a></p>
+<blockquote>
+<p>内容概要</p>
+</blockquote>
+<p>在本篇文章总价中,您将看到以下内容</p>
+<ol>
+<li>ES5数组新增了哪些遍历方法</li>
+<li>ES5数组新增的方法的使用概述</li>
+<li>ES5数组新增方法的合适使用环境</li>
+<li>利用ES5新增的方法，我们可衍生出的写法</li>
+</ol>
+<blockquote>
+<p>内容开始</p>
+</blockquote>
+<p><strong>1. 新增的遍历方法及其含义</strong>    </p>
+<p>这块部分是网上同类化文章最多的部分，再次我并不像过多的表述；我觉得我的博客应该定位于不要脸的套路与技术的衍生探索思考，而不是在基础知识上纠缠不清；这就好比你都和新女友亲亲妮妮的了，你还非想着旧女友上次看电影为啥生你的气~~<br><img src="http://olxsqaohz.bkt.clouddn.com/2017-3-7-01.jpg" alt="....">;</p>
+<p>不过为了照顾部分看众，我在此总结了一个表格概述此块内容，如您需要更多信息，我建议您<a href="http://www.zhangxinxu.com/wordpress/2013/04/es5%E6%96%B0%E5%A2%9E%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/" target="_blank" rel="external">点击这里</a>查看张鑫旭大神的这篇详细文章；</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>传参形式</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>forEach</td>
+<td>callback,[ thisObject]</td>
+<td>返回undefined</td>
+</tr>
+<tr>
+<td>map</td>
+<td>callback,[ thisObject]</td>
+<td>返回callback函数return的值所组成的<strong>新数组</strong></td>
+</tr>
+<tr>
+<td>filter</td>
+<td>callback,[ thisObject]</td>
+<td>返回callback函数return的值为真值的对应元素所组成的<strong>新数组</strong></td>
+</tr>
+<tr>
+<td>some</td>
+<td>callback,[ thisObject]</td>
+<td>返回布尔值，特性：匹配到真值一次即停止遍历</td>
+</tr>
+<tr>
+<td>every</td>
+<td>callback,[ thisObject]</td>
+<td>返回布尔值，特性：匹配到假值一次即停止遍历</td>
+</tr>
+<tr>
+<td>indexOf</td>
+<td>searchElement[, fromIndex]</td>
+<td>返回匹配元素所在的序列号</td>
+</tr>
+<tr>
+<td>lastIndexOf</td>
+<td>searchElement[, fromIndex]</td>
+<td>返回匹配元素所在的序列号</td>
+</tr>
+<tr>
+<td>reduce</td>
+<td>callback[, initialValue]</td>
+<td>返回迭代值，callback函数的首个参数即为上次遍历的return值或initialValue</td>
+</tr>
+<tr>
+<td>reduceRight</td>
+<td>callback[, initialValue]</td>
+<td>返回迭代值，callback函数的首个参数即为上次遍历的return值或initialValue</td>
+</tr>
+</tbody>
+</table>
+<p>在这些方法中：<br>forEach，map，filter，some，every的callback函数中皆可接受三个参数</p>
+<ul>
+<li>v - 当前遍历元素</li>
+<li>i - 当前遍历元素所在序列号</li>
+<li>a - 当前遍历的数组</li>
+</ul>
+<p>reduce，reduceRight的callback函数中皆可接受四个参数</p>
+<ul>
+<li>prev - 前次迭代return的值</li>
+<li>now - 当前迭代的元素</li>
+<li>i - 当前迭代元素所在的序列号</li>
+<li>a - 当前迭代的数组</li>
+</ul>
+<p>好的，基础就此打住。</p>
+<p><strong>2. 新增的遍历方法的使用环境</strong></p>
+<p>我觉得此块内容才是这篇文章我们需要重点讨论的内容；正如我开头所述，大部分新手都处于要么for循环，要么一直forEach的想法下；我并不是说这两个方法怎么不好，这两个方法是最基础的方法，其他方法也可由这两个方法写出来；可既然有对应的更合适的写法，为什么不选择性使用呢？这不就是和HTML标签的语义化是一个意思么；反正什么标签都可以用，为什么我们需要弄出这么多新标签，搞什么语义化？那是因为既然存在那即需要！</p>
+<ol>
+<li><p>forEach - 新增方法中最基础的一个，其他方法亦可由此方法扩展实现，适用于绝大多数情况；</p>
+</li>
+<li><p>map - 最大特点是会返回根据callback函数return的值重组成的新数组，<strong>推荐</strong>在需要根据数组重组一个新数组时使用；<br>需要注意这里的这个返回新数组；我曾经误以为对象的深复制突然来了一条捷径；但结果却不是我所理解的那样；这里的数组确实是新的，但是数组项如果是复合数据类型，将依然保持引址关系而不是引值；<br>参考示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">var test1 = [1, &quot;abc&quot;, undefined, null, true];</div><div class="line">var test2 = [&#123;a: 1&#125;,&#123;a: 1&#125;,&#123;a: 2&#125;,&#123;a: 1&#125;];</div><div class="line"></div><div class="line">//数据项为基本数据类型时的数组快速复制</div><div class="line">var copyTest1 = test1.slice(0);</div><div class="line">var copyTest2 = test1.map(function(v)&#123;</div><div class="line">    return v;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">console.log(copyTest1); // [1, &quot;abc&quot;, undefined, null, true]</div><div class="line">console.log(copyTest2); // [1, &quot;abc&quot;, undefined, null, true]</div><div class="line"></div><div class="line">test1[0] = 23;</div><div class="line">test1.splice(4,1);</div><div class="line"></div><div class="line">console.log(test1);     // [23, &quot;abc&quot;, undefined]</div><div class="line">console.log(copyTest1); // [1, &quot;abc&quot;, undefined, null, true]</div><div class="line">console.log(copyTest2); // [1, &quot;abc&quot;, undefined, null, true]</div><div class="line"></div><div class="line">//数据项为复合数据类型时的数组快速复制</div><div class="line">var copyTest3 = JSON.parse(JSON.stringify(test2));</div><div class="line">var copyTest4 = test2.map(function(v)&#123;</div><div class="line">    return v;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">console.log(JSON.stringify(copyTest3)); // [&#123;&quot;a&quot;:1&#125;,&#123;&quot;a&quot;:1&#125;,&#123;&quot;a&quot;:2&#125;,&#123;&quot;a&quot;:1&#125;]</div><div class="line">console.log(JSON.stringify(copyTest4)); // [&#123;&quot;a&quot;:1&#125;,&#123;&quot;a&quot;:1&#125;,&#123;&quot;a&quot;:2&#125;,&#123;&quot;a&quot;:1&#125;]</div><div class="line"></div><div class="line">test2[0].a = 23;</div><div class="line">test2.splice(3,1);</div><div class="line"></div><div class="line">console.log(JSON.stringify(test2)); // [&#123;&quot;a&quot;:23&#125;,&#123;&quot;a&quot;:1&#125;,&#123;&quot;a&quot;:2&#125;]</div><div class="line">console.log(JSON.stringify(copyTest3)); // [&#123;&quot;a&quot;:1&#125;,&#123;&quot;a&quot;:1&#125;,&#123;&quot;a&quot;:2&#125;,&#123;&quot;a&quot;:1&#125;]</div><div class="line">console.log(JSON.stringify(copyTest4)); // [&#123;&quot;a&quot;:23&#125;,&#123;&quot;a&quot;:1&#125;,&#123;&quot;a&quot;:2&#125;,&#123;&quot;a&quot;:1&#125;]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通过以上代码我们可以看到：</p>
+<ul>
+<li>当数组项为基本数据类型时的两种复制方法均可实现完全复制，原数组的改动不会对既有复制数据产生影响；</li>
+<li>当数组项为复合数据类型的两种复制方法中，利用序列化反序列化复制的数据完美的实现了深度复制；具体介绍可参照我的这篇博文；而利用map返回新数组的形式复制的数据，数组本身不会受原有数组改变的影响，但是数组两却会受到影响；使用时应当予以注意；</li>
+</ul>
+<ol>
+<li><p>filter - 特点是会返回根据callback函数return的真值的元素重组成的新数组，<strong>推荐</strong>在需要对数组进行过滤部分数据时使用；此处的新数组注意点与map一致，不再重复表述；</p>
+</li>
+<li><p>some - 特点是遇到callback函数return的值为真值时即停止遍历，<strong>推荐</strong>在寻找数组中是否存在某复合数据类型元素（仅判定值是否相等），寻找复合元素某项值时使用；<br>参考如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var test = [&#123;id: 1, name: &quot;张三&quot;&#125;,&#123;id: 2, name: &quot;李四&quot;&#125;,&#123;id: 3, name: &quot;王五&quot;&#125;,&#123;id: 4, name: &quot;赵六&quot;&#125;];</div><div class="line"></div><div class="line">//寻找对象中id为3的人的姓名</div><div class="line">test.some(function(v)&#123;</div><div class="line">    if(v.id == 3)&#123;</div><div class="line">        console.log(v.name); // 王五</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>every - 特点是返回每项是否都匹配的结果，事实上此项某种程度来说是可以被some替代的，举例来说：every是所有项都返回真值方能判定真值，用some来表达即：有一项返回了反义真值，即判定真值；<br>参考如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var test = [&#123;a: 1&#125;,&#123;a: 1&#125;,&#123;a: 2&#125;,&#123;a: 1&#125;];</div><div class="line"></div><div class="line">var everyFlag = test.every(function(v)&#123;</div><div class="line">    return v.a == 1;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">var someFlag = !test.some(function(v)&#123;</div><div class="line">    return v.a != 1;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">console.log(everyFlag);  // false</div><div class="line">console.log(someFlag);   //false</div></pre></td></tr></table></figure>
+</li>
+<li><p>indexOf - 返回匹配的系列号，属于数组类型的遍历，之前已有了字符串的遍历，但需要注意此遍历查询<strong>建议</strong>只用在数组项为基本数据类型时；当数组项为复合数据类型的遍历因为有<a href="https://www.baidu.com/s?wd=javascript%20%E4%BC%A0%E5%9D%80%E4%B8%8D%E4%BC%A0%E5%80%BC" target="_blank" rel="external">传址不传值</a>的特性，此时遍历通常是返回-1的；如果你只是需要判定字面上的值是否一致而不考虑存储地址是否一致的话，我建议您使用以下这种方法：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var test = [&#123;a: 1&#125;,&#123;a: 1&#125;,&#123;a: 2&#125;,&#123;a: 1&#125;];</div><div class="line"></div><div class="line">var b = &#123;a: 2&#125;;</div><div class="line"></div><div class="line">var indexFlag = test.indexOf(b);</div><div class="line"></div><div class="line">var someFlag = -1;</div><div class="line">test.some(function(v,i)&#123;</div><div class="line">    if(JSON.stringify(v) == JSON.stringify(b))&#123;</div><div class="line">        someFlag = i;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">console.log(c);  //-1</div><div class="line">console.log(d);  //2</div></pre></td></tr></table></figure>
+<ol>
+<li>reduce - 迭代处理的方法，<strong>推荐</strong>这个方法用在前后元素存在计算关系的情况；例如计算数组元素之和，找出数组复合元素某项的最大值等，可参照如下</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var test1 = [20,62,387,36,154];</div><div class="line">var test2 = [&#123;id: 1, value: 20&#125;,&#123;id: 2, value: 62&#125;,&#123;id: 3, value: 387&#125;,&#123;id: 4, value: 36&#125;,&#123;id: 5, value: 154&#125;];</div><div class="line"></div><div class="line">//简单数组的最大值找法</div><div class="line">var maxValue = Math.max.apply(&#123;&#125;,test1); //387</div><div class="line">var maxValue2 = test1.reduce(function(prev,now)&#123;</div><div class="line">    return now &gt; prev ? now : prev;</div><div class="line">&#125;);</div><div class="line">console.log(maxValue2); // 387</div><div class="line"></div><div class="line">//复合数组的最大值找法</div><div class="line"></div><div class="line">var maxValue3 = test2.reduce(function(prev,now)&#123;</div><div class="line">    return now.value &gt; prev.value ? now : prev;</div><div class="line">&#125;);</div><div class="line">console.log(maxValue3.value); // 387</div></pre></td></tr></table></figure>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<p>我们可以对ES5新增的几个遍历方法总结出以下表</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>使用需求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>forEach</td>
+<td>几乎均可</td>
+</tr>
+<tr>
+<td>map</td>
+<td>需要重组数组或创建新数组时</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>不改动数组内部数据，仅进行数组过滤时</td>
+</tr>
+<tr>
+<td>some</td>
+<td>进行单一条件判断时使用</td>
+</tr>
+<tr>
+<td>every</td>
+<td>进行全部条件判断时使用</td>
+</tr>
+<tr>
+<td>indexOf 或 lastIndexOf</td>
+<td>进行数组项序列号查询时</td>
+</tr>
+<tr>
+<td>reduce 或 reduceRight</td>
+<td>需要对数组前后项进行运算关系计算时使用</td>
+</tr>
+</tbody>
+</table>
+<p>至此，我的这篇ES5新增数组遍历方法的小结予以结束，希望更多的成员能够在理解api使用环境的情况下选择合适的方法，既能满足各项需求，又能写出优美好看的代码；谢谢~<br><img src="http://olxsqaohz.bkt.clouddn.com/2017-3-7-02.jpg" alt="image"></p>
+<p>原创文章，转载请注明来自<a href="https://hmdeng110.github.io" target="_blank" rel="external">404的博客</a>[<a href="https://hmdeng110.github.io" target="_blank" rel="external">https://hmdeng110.github.io</a>]</p>
+
       
 
       
@@ -210,18 +389,74 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/07/ES5新增遍历方法总结/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/07/ES5新增遍历方法总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/27/总有你没看过的css透明度全总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">总有你没看过的css透明度全总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -229,236 +464,10 @@
 
 
   
-    <article id="post-总有你没看过的css透明度全总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/27/总有你没看过的css透明度全总结/">总有你没看过的css透明度全总结</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        
-        <a href="/2017/02/27/总有你没看过的css透明度全总结/" class="archive-article-date">
-  	<time datetime="2017-02-27T15:01:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>日常吐槽</p>
-</blockquote>
-<p>最近写页面要兼容IE8，这让我用了一年多vue的人转回来玩Jquery，不停的addClass,removeClass,attr….要多糟心有多糟心了~这不，IE8透明度这兼容问题又来了么;废话不多说，马上总结开始。</p>
-<blockquote>
-<p>内容概要</p>
-</blockquote>
-<p><strong>在以下总结内容，你将看到</strong></p>
-<ol>
-<li>opacity的适用情况;</li>
-<li>IE9+透明度的最佳替代方案；</li>
-<li>IE8-的透明度常规兼容方法；</li>
-<li>利用套路反杀IE8-兼容；
-        
-          <a class="article-more-a" href="/2017/02/27/总有你没看过的css透明度全总结/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">原创</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">透明度</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">套路</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/27/总有你没看过的css透明度全总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-list-style的查缺补漏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/list-style的查缺补漏/">有关list-style的一点查缺补漏</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/23/list-style的查缺补漏/" class="archive-article-date">
-  	<time datetime="2017-02-23T14:28:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天做页面的时候遇到list-style设置失效的问题，具体的需求是这样的：固定容器的高，内部有左右两侧，左侧为一张缩略图；右侧分为上下两部分，上部分为标题，下部分为一列表；如下图</p>
-<hr>
-<p>悬浮前：<br><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-23-01.png" alt="悬浮前图片"></p>
-<p>悬浮后：<br><img src="http://olxsqaohz.bkt.clouddn.com/2017-2-23-02.png" alt="悬浮后图片"></p>
-<hr>
-<p><strong>要求：实现鼠标移上去去的时候展开列表，且把列表标记显示为方块；如上图</strong></p>
-        
-          <a class="article-more-a" href="/2017/02/23/list-style的查缺补漏/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/23/list-style的查缺补漏/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-开场" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/开场/">自我介绍</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/20/开场/" class="archive-article-date">
-  	<time datetime="2017-02-20T14:28:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>####大家好，这里是 404-NOTFOUND；</p>
-<p>先做个自我介绍，我是一名码农，细化一点叫 前端工程师，圈内常用名为404-NOTFOUND,<br>有时也叫404，当然名字冲突的时候我还会化身为403-NOTACCESS；工作3年了，属于自学前<br>端，目前在一家房地产软件开发公司担任前端架构师兼前端工程师；目前主要狩猎的代码方<br>面的技术主要有js,html,css,c#,vb;及其衍生类；主打还是前端三件套吧，其实后者只是抑制<br>不住自己内心的小波浪用来做些小软件自己使用而已，后续的话，我也会考虑把我做的一些软<br>件公布出来；有需要的也可以试试看。</p>
-<p>接下来我将把我私下里记录的小笔记，小套路慢慢放上来，希望能帮助到大家！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">不要脸</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/20/开场/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -481,8 +490,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
