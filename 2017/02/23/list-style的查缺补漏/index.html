@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-23-01.png">
 <meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-2-23-02.png">
 <meta property="og:image" content="http://olxsqaohz.bkt.clouddn.com/2017-3-7-02.jpg">
-<meta property="og:updated_time" content="2017-03-07T14:44:06.135Z">
+<meta property="og:updated_time" content="2017-03-08T13:32:50.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有关list-style的一点查缺补漏">
 <meta name="twitter:description" content="今天做页面的时候遇到list-style设置失效的问题，具体的需求是这样的：固定容器的高，内部有左右两侧，左侧为一张缩略图；右侧分为上下两部分，上部分为标题，下部分为一列表；如下图
@@ -53,7 +53,8 @@
   
 
   
-<meta name="baidu-site-verification" content="c5Vs3k6Fz9" />
+<meta name="baidu-site-verification" content="OdUCSYGXNe" />
+
 
 
 </head>
@@ -90,6 +91,10 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			
+            
+    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -97,7 +102,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/hmdeng110" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/404-NF" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
@@ -138,7 +143,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/hmdeng110" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/404-NF" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
@@ -212,7 +217,7 @@
 <p>这个问题解决了，新的问题来了，不同浏览器之间，这个列表标记与文字之间的间距并不一致，甚至可以说是过大了，这又成了个问题；这我暂时没有找到可行的方法，有知道的麻烦指教一下，</p>
 <p>最终我还是采用了before伪元素的形式去实现的，毕竟这种方式间距控制还是很简单的。</p>
 <p><img src="http://olxsqaohz.bkt.clouddn.com/2017-3-7-02.jpg" alt="image"></p>
-<p>原创文章，转载请注明来自<a href="https://hmdeng110.github.io" target="_blank" rel="external">404的博客</a>[<a href="https://hmdeng110.github.io" target="_blank" rel="external">https://hmdeng110.github.io</a>]</p>
+<p>原创文章，转载请注明来自<a href="https://404-NF.github.io" target="_blank" rel="external">404的博客</a>[<a href="https://404-NF.github.io" target="_blank" rel="external">https://404-NF.github.io</a>]</p>
 
       
 
@@ -310,8 +315,8 @@
     </a>
   
   
-    <a href="/2017/02/20/开场/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">自我介绍</div>
+    <a href="/2017/02/20/about/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">about</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -393,17 +398,25 @@
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -454,10 +467,6 @@
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">套路</a>
               </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">不要脸</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -503,9 +512,23 @@
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://baidu.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>百度</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">dwhaudgwaogfwua</div>
   	  	
     	</section>
     
